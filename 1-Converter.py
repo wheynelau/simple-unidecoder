@@ -20,7 +20,18 @@ user_input = st.text_area("Enter/paste your text here")
 if user_input:
     cleaned_text = unidecode_expect_ascii(user_input)
     st.write("Your text had", count_bytes(user_input), "bytes")
+    font_col, text_col = st.columns(2)
+    with font_col:
+        font_options = ['Arial', 'Helvetica', 'Times New Roman', 'Courier New', 'Verdana', 'Georgia']
+        font = st.selectbox('Select your font:', font_options)
+
+    with text_col:
+        text_size = st.number_input('Select your font size:', min_value=1,
+         max_value=100, value=12, step=1)
     st.write("""Here's the clean version of your text:  
     You can select all the text to copy it. """)
-    st.text_area("Cleaned Text", cleaned_text, height=150)
+    no_breaks= cleaned_text.replace('\n', '<br>')
+    output_text = f'<p style="font-family:{font}; font-size: {text_size}px;">{no_breaks}</p>'
+
+    st.markdown(output_text, unsafe_allow_html=True)
     st.write("It now has", count_bytes(cleaned_text), "bytes")
