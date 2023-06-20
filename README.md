@@ -25,3 +25,11 @@ streamlit run 1-Converter.py
 
 ## Known issues
 
+The known issues are shared by the unidecode library. You can find the list of known issues [here](https://pypi.org/project/Unidecode/).
+
+Here are the more important ones:
+
+1. German umlauts are transliterated incorrectly
+2. Japanese Kanji is transliterated as Chinese
+
+Ideally, it is best to use this for english only.
