@@ -1,6 +1,6 @@
 # my_streamlit_app.py
 import streamlit as st
-from unidecode import unidecode
+from unidecode import unidecode_expect_ascii
 
 def count_bytes(text, encoding='utf-8'):
     return len(text.encode(encoding))
@@ -13,7 +13,7 @@ user_input = st.text_area("Enter/paste your text here")
 
 # Process text
 if user_input:
-    cleaned_text = unidecode(user_input)
+    cleaned_text = unidecode_expect_ascii(user_input)
     st.write("Your text had", count_bytes(user_input), "bytes")
     st.write("Here's the ASCII version of your text:")
     st.text(cleaned_text)
