@@ -1,7 +1,7 @@
 # simple-unidecoder
 
 This is a simple unidecoder that converts unicode characters to ASCII characters. It is built using [Streamlit](https://www.streamlit.io/).
-It uses the unidecode library to convert special characters to ASCII characters. This is especially useful when you are working with microsoft word that contains special characters and you want to convert them to ASCII characters.
+It uses the [unidecode](https://pypi.org/project/Unidecode/) library to convert special characters to ASCII characters. This is especially useful when you are working with microsoft word that contains special characters and you want to convert them to ASCII characters.
 
 - [simple-unidecoder](#simple-unidecoder)
   - [To run on local machine](#to-run-on-local-machine)
