@@ -4,7 +4,12 @@ from unidecode import unidecode_expect_ascii
 
 def count_bytes(text, encoding='utf-8'):
     return len(text.encode(encoding))
-
+st.set_page_config(
+    page_title="Text cleaner",
+    page_icon=":hippopotamus:",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
 # Title
 st.title('Unicode to ASCII text cleaner')
 
